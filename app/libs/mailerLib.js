@@ -6,8 +6,8 @@ const logger = require('./../libs/loggerLib');
         secure: false, // true for 465, false for other ports
         requireTLS: true,
         auth: {
-            user: 'anonyymass@gmail.com', // generated ethereal user
-            pass: 'anon#dummy@2019' // generated ethereal password
+            user: 'dummyMeetingPlanner2019@gmail.com', // generated ethereal user
+            pass: 'dummy#2019' // generated ethereal password
         },
 
         //to avoid self signed certificate in certificate chain error
