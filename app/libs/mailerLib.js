@@ -7,7 +7,7 @@ const logger = require('./../libs/loggerLib');
         requireTLS: true,
         auth: {
             user: 'anonyymass@gmail.com', // generated ethereal user
-            pass: 'sexwith#SG@2019' // generated ethereal password
+            pass: 'anon#dummy@2019' // generated ethereal password
         },
 
         //to avoid self signed certificate in certificate chain error
