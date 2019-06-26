@@ -1,0 +1,183 @@
+define({ "api": [
+  {
+    "group": "Emit",
+    "version": "1.0.0",
+    "type": "emit",
+    "url": "createNewMeeting",
+    "title": "Create a new meeting for a user.",
+    "description": "<p><b>(&quot;createNewMeeting&quot;)</b> Emitted for creating a new meeting.It will also send meeting created email and also schedule an alarm.</p>",
+    "examples": [
+      {
+        "title": "Example data to be emitted",
+        "content": "{\n                               \"meetingId\" : string,\n                               \"title\" : string,\n                               \"start\" : date,\n                               \"end\" : date,\n                               \"venue\" : string,\n                               \"adminId\" : string,\n                               \"adminFullName\" : string,\n                               \"adminUserName\" : string,\n                               \"userId\" : string,\n                               \"userFullName\" : string,\n                               \"userEmail\" : string\n                     }",
+        "type": "json"
+      }
+    ],
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Emit",
+    "name": "EmitCreatenewmeeting"
+  },
+  {
+    "group": "Emit",
+    "version": "1.0.0",
+    "type": "emit",
+    "url": "delete-meeting",
+    "title": "Delete meeting",
+    "description": "<p><b>(&quot;delete-meeting&quot;)</b> Emitted to delete/cancel a meeting.It will also send meeting deletion email and cancel the scheduled alarm &amp; email.</p>",
+    "examples": [
+      {
+        "title": "Example data emitted",
+        "content": "{\n                                \"meetingId\" : string,\n                                \"title\" : string,\n                                \"start\" : date,\n                                \"end\" : date,\n                                \"venue\" : string,\n                                \"adminId\" : string,\n                                \"adminFullName\" : string,\n                                \"adminUserName\" : string,\n                                \"userId\" : string,\n                                \"userFullName\" : string,\n                                \"userEmail\" : string\n                       }",
+        "type": "json"
+      }
+    ],
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Emit",
+    "name": "EmitDeleteMeeting"
+  },
+  {
+    "group": "Emit",
+    "version": "1.0.0",
+    "type": "emit",
+    "url": "edit-meeting",
+    "title": "Edit an existing meeting  .",
+    "description": "<p><b>(&quot;edit-meeting&quot;)</b> Emitted for saving an edited meeting.It will also send meeting edited email and reschedule the meeting.</p>",
+    "examples": [
+      {
+        "title": "The following data has to be emitted",
+        "content": "{\n                                \"meetingId\" : string,\n                                \"title\" : string,\n                                \"start\" : date,\n                                \"end\" : date,\n                                \"venue\" : string,\n                                \"adminId\" : string,\n                                \"adminFullName\" : string,\n                                \"adminUserName\" : string,\n                                \"userId\" : string,\n                                \"userFullName\" : string,\n                                \"userEmail\" : string\n                       }",
+        "type": "json"
+      }
+    ],
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Emit",
+    "name": "EmitEditMeeting"
+  },
+  {
+    "group": "Emit",
+    "version": "1.0.0",
+    "type": "emit",
+    "url": "forgot-password",
+    "title": "Password reset email",
+    "description": "<p><b>(&quot;forgot-password&quot;)</b> : To send an e-mail with password reset link.</p>",
+    "examples": [
+      {
+        "title": "Example data emitted",
+        "content": "{\n                \"email\":string,\n                \"resetPasswordToken\":string\n            }",
+        "type": "json"
+      }
+    ],
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Emit",
+    "name": "EmitForgotPassword"
+  },
+  {
+    "group": "Emit",
+    "version": "1.0.0",
+    "type": "emit",
+    "url": "join-room",
+    "title": "Joining the current room",
+    "description": "<p><b>(&quot;join-room&quot;)</b> Emitted when an admin opens a user page to check his meetings. Data required: <b>userId</b></p>",
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Emit",
+    "name": "EmitJoinRoom"
+  },
+  {
+    "group": "Emit",
+    "version": "1.0.0",
+    "type": "emit",
+    "url": "setUser",
+    "title": "Set a user as online",
+    "description": "<p><b>(&quot;set-user&quot;)</b> -&gt; Called: When a user comes online. -&gt; Params: authentication token</p>",
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Emit",
+    "name": "EmitSetuser"
+  },
+  {
+    "group": "Listen",
+    "version": "1.0.0",
+    "type": "listen",
+    "url": "authError",
+    "title": "Failed authentication token authorization",
+    "description": "<p><b>(&quot;auth-error&quot;)</b> Called: Listened by current/main room when there is a problem with authentication token like incorrect/expired</p>",
+    "examples": [
+      {
+        "title": "Example data",
+        "content": "{\n  \"status\": 500,\n  \"error\": Authentication token expired/incorrect                        \n }",
+        "type": "json"
+      }
+    ],
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Listen",
+    "name": "ListenAutherror"
+  },
+  {
+    "version": "1.0.0",
+    "group": "Listen",
+    "type": "listen",
+    "url": "delete-meeting",
+    "title": "Delete meeting in realtime.",
+    "description": "<p><b>(&quot;delete-meeting&quot;)</b> Listened by both admin and user to get real time notifications of meeting cancellations.</p>",
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Listen",
+    "name": "ListenDeleteMeeting"
+  },
+  {
+    "group": "Listen",
+    "version": "1.0.0",
+    "type": "listen",
+    "url": "start-room",
+    "title": "Starting the room",
+    "description": "<p><b>(&quot;start-room&quot;)</b> has to be listened to start a room when an admin logs in.</p>",
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Listen",
+    "name": "ListenStartRoom"
+  },
+  {
+    "group": "Listen",
+    "version": "1.0.0",
+    "type": "listen",
+    "url": "update-meeting",
+    "title": "Updating meeting in realtime for user and admin",
+    "description": "<p><b>(&quot;update-meeting&quot;)</b> Listened by both admin and user to get real time notifications about meeting scheduled/re-scheduled.</p>",
+    "examples": [
+      {
+        "title": "Example data",
+        "content": "{\n                        error:false,\n                        message : 'New Meeting created',\n                        status : 200,\n                        data :\n                            {\n                                \"meetingId\" : string,\n                                \"title\" : string,\n                                \"startTime\" : date,\n                                \"endTime\" : date,\n                                \"venue\" : string,\n                                \"adminId\" : string,\n                                \"adminFullName\" : string,\n                                \"adminUserName\" : string,\n                                \"userId\" : string,\n                                \"userFullName\" : string,\n                                \"userEmail\" : string\n                            }\n                    }",
+        "type": "json"
+      }
+    ],
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Listen",
+    "name": "ListenUpdateMeeting"
+  },
+  {
+    "group": "Listen",
+    "version": "1.0.0",
+    "type": "listen",
+    "url": "userId",
+    "title": "Meeting Alarm",
+    "description": "<p><b>(&quot;userId&quot;)</b> Listened by the online user for getting realtime notification about a meeting to be started in 15 minutes.</p>",
+    "examples": [
+      {
+        "title": "Example data output",
+        "content": "{\n                        \"meetingId\" : string,\n                        \"adminId\" : string,\n                        \"adminFullName\" : string,\n                        \"adminUserName\" : string,\n                        \"userId\" : string,\n                        \"userFullName\" : string,\n                        \"userEmail\" : string,\n                        \"start\" : date,\n                        \"end\" : date,\n                        \"venue\" : string,\n                        \"title\" : string\n                    }",
+        "type": "json"
+      }
+    ],
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Listen",
+    "name": "ListenUserid"
+  },
+  {
+    "group": "Listen",
+    "version": "1.0.0",
+    "type": "listen",
+    "url": "verifyUser",
+    "title": "Authenticate a user",
+    "description": "<p><b>(&quot;verifyUser&quot;)</b> -&gt; Called: On User's end.</p>",
+    "filename": "libs/socketLib.js",
+    "groupTitle": "Listen",
+    "name": "ListenVerifyuser"
+  }
+] });
