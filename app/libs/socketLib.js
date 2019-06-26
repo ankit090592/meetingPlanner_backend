@@ -36,7 +36,7 @@ let setServer = (server) => {
         socket.on('forgot-password', (data) => {
             mailerLib.sendEmail('"Meeting Planner" <admin@meetingPlanner.in>',
                 data.email, 'Password reset for Meeting Planner App', `Hi ${data.firstName} ${data.lastName},<br><br>
-            You requested to reset your passowrd. <br>Please click this link to reset it <a href="http://localhost:4200/verifyUser?activateToken=${data.resetPasswordToken}" ></a><br><br>FollowUp Team`)
+            You requested to reset your passowrd. <br>Please click this link to reset it <a href="http://appdevtest.xyz/verifyUser?activateToken=${data.resetPasswordToken}" ></a><br><br>FollowUp Team`)
         })
 
 

@@ -70,7 +70,7 @@ let signUpFunction = (req, res) => {
                                 mailerLib.sendEmail('"Meeting Planner" <admin@meetingPlanner.in>',
                                     newUserObj.email, 'Welcome to Meeting Planner App', `Hi ${newUserObj.firstName} ${newUserObj.lastName}<br>
                                 Welcome to Meeting Planner App! <br> Please click
-                                <a href="http://localhost:4200/verifyUser?verifyUserToken=${newUserObj.verifyUserToken}"> here </a> to verify your e-mail.<br>
+                                <a href="http://appdevtest.xyz/verifyUser?verifyUserToken=${newUserObj.verifyUserToken}"> here </a> to verify your e-mail.<br>
                                 <br>Keep planning!<br>Meeting Planner Team`)
                                 resolve(newUserObj)
                             }
@@ -326,7 +326,7 @@ let forgotPasswordFunction = (req, res) => {
                         delete resultObj.admin
                         mailerLib.sendEmail('"Meeting Planner" <admin@meetingPlanner.in>',
                             resultObj.email, 'Password reset for Meeting Planner App', `Hi ${resultObj.firstName} ${resultObj.lastName}<br>
-                        You requested to reset your passowrd. <br>Please click <a href="http://localhost:4200/resetPwd?resetPwdToken=${resultObj.resetPwdToken}" > here </a>to reset it.<br>
+                        You requested to reset your passowrd. <br>Please click <a href="http://appdevtest.xyz/resetPwd?resetPwdToken=${resultObj.resetPwdToken}" > here </a>to reset it.<br>
                         Keep planning!<br>Meeting Planner Team`)
                         resolve(resultObj)
                     }
